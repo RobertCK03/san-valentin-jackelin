@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi bebé 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#ffd6e8, #ffeef6);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ESQUINAS */
+.corner {
+  position: fixed;
+  top: 10px;
+  width: 90px;
+  opacity: 0.9;
+}
+.corner.left { left: 10px; }
+.corner.right { right: 10px; transform: scaleX(-1); }
+
+/* CONTENEDOR CENTRAL */
+.container {
+  position: relative;
+}
+
+/* TARJETA */
+.card {
+  background: white;
+  padding: 42px;
+  border-radius: 38px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  width: 420px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #ff4f8b;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+p {
+  color: #444;
+  font-size: 20px;
+}
+
+/* IMAGEN CENTRAL */
+.center-kitty {
+  width: 170px;
+  margin: 10px 0 25px;
+}
+
+/* IMÁGENES LATERALES — AHORA BIEN CENTRADAS */
+.side-kitty {
+  position: absolute;
+  top: 55%;
+  width: 130px;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* IZQUIERDA: mitad exacta entre tarjeta y borde */
+.side-left {
+  left: calc(-130px - 60px);
+}
+
+/* DERECHA: simétrico */
+.side-right {
+  right: calc(-130px - 60px);
+}
+
+button {
+  padding: 16px 32px;
+  border-radius: 35px;
+  border: none;
+  font-size: 19px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4f8b;
+  color: white;
+}
+
+.no {
+  background: #ddd;
+}
+
+/* LAZOS */
+.bow {
+  position: fixed;
+  top: -60px;
+  width: 45px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-60px) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESQUINAS -->
+<img src="corner.png" class="corner left">
+<img src="corner.png" class="corner right">
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <!-- IMÁGENES LATERALES SIMÉTRICAS -->
+  <img src="kitty2.png" class="side-kitty side-left">
+  <img src="kitty3.png" class="side-kitty side-right">
+
+  <div class="card" id="card">
+    <h1>Jackelin 💖</h1>
+
+    <img src="kitty1.png" class="center-kitty">
+
+    <p>Gracias por hacer mis días más felices.</p>
+    <p><strong>¿Quieres ser mi San Valentín? 💘</strong></p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Sí 💖</button>
+      <button class="no" onclick="moveNo()">No 🙈</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
+
+function startMusic() {
+  document.getElementById("music").play();
+}
+
+function sayYes() {
+  document.getElementById("card").innerHTML = `
+    <h1>Sabía que dirías que sí 💕</h1>
+    <img src="kitty1.png" class="center-kitty">
+    <p><strong>Te amo muchote mi bebé 🎀🐱</strong></p>
+  `;
+}
+
+function moveNo() {
+  const btn = document.querySelector(".no");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 80 + "%";
+  btn.style.top = Math.random() * 80 + "%";
+}
+
+function createBow() {
+  const bow = document.createElement("img");
+  bow.src = "bow.png";
+  bow.className = "bow";
+  bow.style.left = Math.random() * 100 + "vw";
+  bow.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(bow);
+
+  setTimeout(() => bow.remove(), 10000);
+}
+
+setInterval(createBow, 600);
+</script>
+
+</body>
+</html>
+
+
+
