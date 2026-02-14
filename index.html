@@ -17,8 +17,9 @@ body {
   align-items: center;
 }
 
-/* 🔽 ESCALADO GENERAL */
+/* CONTENEDOR CENTRAL */
 .container {
+  position: relative;
   transform: scale(1);
   transform-origin: center;
 }
@@ -32,11 +33,6 @@ body {
 }
 .corner.left { left: 10px; }
 .corner.right { right: 10px; transform: scaleX(-1); }
-
-/* CONTENEDOR CENTRAL */
-.container {
-  position: relative;
-}
 
 /* TARJETA */
 .card {
@@ -122,10 +118,10 @@ button {
   }
 }
 
-/* 📱 SOLO ANDROID / CELULAR */
+/* 📱 ANDROID / CELULAR — MÁS PEQUEÑO */
 @media (max-width: 600px) {
   .container {
-    transform: scale(0.8);   /* 🔽 AQUÍ SE HACE MÁS PEQUEÑO TODO */
+    transform: scale(0.75); /* 🔽 CUADRO BLANCO MÁS CHICO */
   }
 }
 </style>
@@ -200,6 +196,7 @@ setInterval(createBow, 600);
 
 </body>
 </html>
+
 
 
 
