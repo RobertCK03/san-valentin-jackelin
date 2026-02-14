@@ -17,6 +17,12 @@ body {
   align-items: center;
 }
 
+/* 🔽 ESCALADO GENERAL */
+.container {
+  transform: scale(1);
+  transform-origin: center;
+}
+
 /* ESQUINAS */
 .corner {
   position: fixed;
@@ -61,7 +67,7 @@ p {
   margin: 10px 0 25px;
 }
 
-/* IMÁGENES LATERALES — AHORA BIEN CENTRADAS */
+/* IMÁGENES LATERALES */
 .side-kitty {
   position: absolute;
   top: 55%;
@@ -71,12 +77,10 @@ p {
   opacity: 0.95;
 }
 
-/* IZQUIERDA: mitad exacta entre tarjeta y borde */
 .side-left {
   left: calc(-130px - 60px);
 }
 
-/* DERECHA: simétrico */
 .side-right {
   right: calc(-130px - 60px);
 }
@@ -117,6 +121,13 @@ button {
     opacity: 0;
   }
 }
+
+/* 📱 SOLO ANDROID / CELULAR */
+@media (max-width: 600px) {
+  .container {
+    transform: scale(0.85);   /* 🔽 AQUÍ SE HACE MÁS PEQUEÑO TODO */
+  }
+}
 </style>
 </head>
 
@@ -132,7 +143,6 @@ button {
 
 <div class="container">
 
-  <!-- IMÁGENES LATERALES SIMÉTRICAS -->
   <img src="kitty2.png" class="side-kitty side-left">
   <img src="kitty3.png" class="side-kitty side-right">
 
@@ -190,6 +200,5 @@ setInterval(createBow, 600);
 
 </body>
 </html>
-
 
 
