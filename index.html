@@ -20,13 +20,13 @@ body {
 /* ESQUINAS */
 .corner {
   position: fixed;
-  top: 8px;
-  width: 65px;
+  top: 6px;
+  width: 55px;
   opacity: 0.9;
   z-index: 1;
 }
-.corner.left { left: 8px; }
-.corner.right { right: 8px; transform: scaleX(-1); }
+.corner.left { left: 6px; }
+.corner.right { right: 6px; transform: scaleX(-1); }
 
 /* CONTENEDOR */
 .container {
@@ -36,61 +36,61 @@ body {
   justify-content: center;
 }
 
-/* TARJETA */
+/* ⬜ CUADRO BLANCO (MÁS PEQUEÑO) */
 .card {
   background: white;
-  padding: 26px 22px;
-  border-radius: 28px;
+  padding: 20px 18px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-  width: 88%;
-  max-width: 330px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+  width: 82%;
+  max-width: 300px;
   position: relative;
   z-index: 2;
 }
 
 h1 {
   color: #ff4f8b;
-  font-size: 22px;
-  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 p {
   color: #444;
-  font-size: 15px;
-  margin: 6px 0;
+  font-size: 14px;
+  margin: 5px 0;
 }
 
 /* IMAGEN CENTRAL */
 .center-kitty {
-  width: 120px;
-  margin: 8px 0 18px;
+  width: 105px;
+  margin: 6px 0 14px;
 }
 
-/* IMÁGENES LATERALES */
+/* 🐱 IMÁGENES LATERALES (MÁS PEQUEÑAS) */
 .side-kitty {
   position: absolute;
   top: 55%;
-  width: 90px;
+  width: 70px;
   transform: translateY(-50%);
   opacity: 0.95;
   z-index: 1;
 }
 
 .side-left {
-  left: -45px;
+  left: -35px;
 }
 
 .side-right {
-  right: -45px;
+  right: -35px;
 }
 
 button {
-  padding: 12px 22px;
-  border-radius: 25px;
+  padding: 10px 18px;
+  border-radius: 22px;
   border: none;
-  font-size: 14px;
-  margin: 6px;
+  font-size: 13px;
+  margin: 5px;
   cursor: pointer;
 }
 
@@ -103,11 +103,11 @@ button {
   background: #ddd;
 }
 
-/* LAZOS */
+/* 🎀 LAZOS */
 .bow {
   position: fixed;
   top: -60px;
-  width: 30px;
+  width: 26px;
   animation: fall linear forwards;
   z-index: 0;
 }
@@ -137,6 +137,7 @@ button {
 
 <div class="container">
 
+  <!-- IMÁGENES LATERALES -->
   <img src="kitty2.png" class="side-kitty side-left">
   <img src="kitty3.png" class="side-kitty side-right">
 
@@ -174,8 +175,8 @@ function sayYes() {
 function moveNo() {
   const btn = document.querySelector(".no");
   btn.style.position = "absolute";
-  btn.style.left = Math.random() * 70 + "%";
-  btn.style.top = Math.random() * 70 + "%";
+  btn.style.left = Math.random() * 65 + "%";
+  btn.style.top = Math.random() * 65 + "%";
 }
 
 function createBow() {
@@ -189,11 +190,12 @@ function createBow() {
   setTimeout(() => bow.remove(), 10000);
 }
 
-setInterval(createBow, 700);
+setInterval(createBow, 800);
 </script>
 
 </body>
 </html>
+
 
 
 
