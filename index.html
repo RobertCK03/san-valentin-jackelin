@@ -21,7 +21,7 @@ body {
 .corner {
   position: fixed;
   top: 6px;
-  width: 55px;
+  width: 52px;
   opacity: 0.9;
   z-index: 1;
 }
@@ -36,15 +36,15 @@ body {
   justify-content: center;
 }
 
-/* ⬜ CUADRO BLANCO (MÁS PEQUEÑO) */
+/* ⬜ CUADRO BLANCO (MÁS ANGOSTO) */
 .card {
   background: white;
   padding: 20px 18px;
   border-radius: 24px;
   text-align: center;
   box-shadow: 0 14px 30px rgba(0,0,0,0.25);
-  width: 82%;
-  max-width: 300px;
+  width: 78%;
+  max-width: 280px;
   position: relative;
   z-index: 2;
 }
@@ -63,26 +63,26 @@ p {
 
 /* IMAGEN CENTRAL */
 .center-kitty {
-  width: 105px;
+  width: 100px;
   margin: 6px 0 14px;
 }
 
-/* 🐱 IMÁGENES LATERALES (MÁS PEQUEÑAS) */
+/* 🐱 IMÁGENES LATERALES (MÁS AFUERA) */
 .side-kitty {
   position: absolute;
   top: 55%;
-  width: 70px;
+  width: 65px;
   transform: translateY(-50%);
   opacity: 0.95;
   z-index: 1;
 }
 
 .side-left {
-  left: -35px;
+  left: -70px;   /* 👈 MÁS SEPARACIÓN */
 }
 
 .side-right {
-  right: -35px;
+  right: -70px;  /* 👈 MÁS SEPARACIÓN */
 }
 
 button {
@@ -107,7 +107,7 @@ button {
 .bow {
   position: fixed;
   top: -60px;
-  width: 26px;
+  width: 24px;
   animation: fall linear forwards;
   z-index: 0;
 }
@@ -190,11 +190,12 @@ function createBow() {
   setTimeout(() => bow.remove(), 10000);
 }
 
-setInterval(createBow, 800);
+setInterval(createBow, 900);
 </script>
 
 </body>
 </html>
+
 
 
 
